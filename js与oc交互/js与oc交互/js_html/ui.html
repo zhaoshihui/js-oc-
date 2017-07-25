@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=2.5, user-scalable=1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="format-detection" content="email=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<link type="text/css" rel="stylesheet" href="./css/mobile_base.css">
+<script type="text/javascript" src="./js/date_format.js"></script>
+<script type="text/javascript" src="./js/jquery.js"></script>
+<title>UI模板</title>
+<script type="text/javascript">
+var refresh_show;
+var json_result;
+//question
+var json_result={"data":{"nli":[{"desc_obj":{"result":"请问你想要看哪个频道？","type":"tvprogram","status":"0"},"type":"question"}]},"status":"ok"};
+//selection cooking
+//var json_result={"data":{"nli":[{"desc_obj":{"result":"主人，为你精选了一些。你可以说：第几个，或者直接点击查看详情。","type":"cooking","status":0},"data_obj":[{"name":"草莓冻芝士"},{"name":"芒果慕斯蛋糕"},{"name":"奶油草莓蛋糕"},{"name":"山楂冻芝士蛋糕"},{"name":"翻糖杯子蛋糕"},{"name":"芝士蛋糕"},{"name":"巧克力棒棒糖蛋糕"},{"name":"芒果紫薯慕斯蛋糕"},{"name":"6寸水果蛋糕"}],"type":"selection"}]},"status":"ok"};
+//selection news
+//var json_result={"data":{"nli":[{"desc_obj":{"result":"主人，查看详情，请说第几条，更多新闻，请说下一页。","type":"news","status":0},"data_obj":[{"image_url":"http://n.sinaimg.cn/mil/crawl/20170626/Sf65-fyhneam2596190.jpg","ref_url":"http://mil.news.sina.com.cn/jssd/2017-06-26/doc-ifyhmtcf2895761.shtml","time":"2017-06-26","detail":"　　新浪军事编者：为了更好的为读者呈现多样军事内容，满足读者不同阅读需求，共同探讨国内国际战略动态，新浪军事独家推出《深度军情》版块，深度解读军事新闻背后的隐藏态势，立体呈现中国面临的复杂军事战略环境","title":"中国空军战机大都停放在机库 俄军为何却露天停放"},{"image_url":"http://n.sinaimg.cn/news/transform/20170626/hbzb-fyhneam2591065.jpg","ref_url":"http://news.sina.com.cn/o/2017-06-26/doc-ifyhmpew3427589.shtml","time":"2017-06-26","detail":"　　原标题：湖南暴雨致6人亡1人失踪 直接经济损失32.7亿元\n　　记者26日从湖南省民政厅获悉，连日来的强降雨已造成湖南245万人受灾，6人死亡，1人失踪。针对湖南局地严重暴雨洪涝灾害，中国国家减灾","title":"湖南暴雨致6人亡1人失踪 直接经济损失32.7亿元"},{"image_url":"","ref_url":"http://news.sina.com.cn/c/nd/2017-06-26/doc-ifyhmtek7780252.shtml","time":"2017-06-26","detail":"　　原标题：四川茂县垮塌位置发生位移 可能发生二次滑坡\n　　新华社四川茂县6月26日电（记者薛玉斌）据四川省安监局消息，26日11时10分左右，在茂县山体高位垮塌救援现场，安监救援队伍的边坡雷达设备监","title":"四川茂县垮塌位置发生位移 可能发生二次滑坡"},{"image_url":"","ref_url":"http://news.sina.com.cn/c/nd/2017-06-26/doc-ifyhmtek7780194.shtml","time":"2017-06-26","detail":"　　原标题：3年来我国追回外逃人员3051人\n　　记者近日从中央反腐败协调小组国际追逃追赃工作办公室获悉，自2014年6月成立中央追逃办以来，截至今年5月，我国先后从90多个国家和地区追回外逃人员30","title":"中国3年来追回外逃人员3051人 赃款90.98亿元"},{"image_url":"http://n.sinaimg.cn/mil/crawl/20170622/jAik-fyhneak8986681.jpg","ref_url":"http://mil.news.sina.com.cn/jssd/2017-06-26/doc-ifyhmtek7780096.shtml","time":"2017-06-26","detail":"　　新浪军事编者：为了更好的为读者呈现多样军事内容，满足读者不同阅读需求，共同探讨国内国际战略动态，新浪军事独家推出《深度军情》版块，深度解读军事新闻背后的隐藏态势，立体呈现中国面临的复杂军事战略环境","title":"美军为何放弃重启F22战机 无法对歼20形成质量优势"},{"image_url":"http://n.sinaimg.cn/top/transform/20170626/6_lz-fyhneam2576683.jpg","ref_url":"http://tech.sina.com.cn/i/2017-06-26/doc-ifyhmtek7780092.shtml","time":"2017-06-26","detail":"　　来源：创业家 曹珂\n　　6月23日，牛文文的“重度垂直实验室”走进上海饿了么总部。饿了么创始人张旭豪为“实验室”的学员们讲课。他讲述了对于“未来餐厅”和“新零售”的思考，认为重模式的公司“更能够从","title":"张旭豪驳王兴：格局高的人不应该那样谈论自己的股东"},{"image_url":"http://n.sinaimg.cn/kandian/crawl/20170626/QiID-fyhneam2543000.jpg","ref_url":"http://news.sina.com.cn/s/wh/2017-06-26/doc-ifyhmtcf2895205.shtml","time":"2017-06-26","detail":"　　据外媒报道，6月25日，马来西亚廉价航空亚航一架客机25日从澳大利亚珀斯飞往吉隆坡，起飞后因引擎发生故障被迫折返珀斯。有乘客称曾听到类似爆炸声，事发时客机剧烈震动，就像“坐在洗衣机上”。\n　　据《","title":"亚航客机引擎故障折返 乘客:震动大像坐洗衣机"},{"image_url":"http://n.sinaimg.cn/mil/crawl/20170626/0jFQ-fyhneam2563999.jpg","ref_url":"http://mil.news.sina.com.cn/china/2017-06-26/doc-ifyhmtek7779908.shtml","time":"2017-06-26","detail":" \n　　原标题：文在寅提议“南北组队”参赛奥运 朝鲜2小时后拒绝\n　　海外网6月26日电 韩国总统文在寅向朝鲜提议在明年的平昌冬奥会上南北共同组队，这是文在寅强调政府在参与以美国为中心的国际社会加强对","title":"韩总统提议朝韩共同组队参赛奥运 朝鲜2小时后打脸"},{"image_url":"http://n.sinaimg.cn/news/transform/20170626/b34Y-fyhneam2569364.jpg","ref_url":"http://news.sina.com.cn/o/2017-06-26/doc-ifyhmpew3424182.shtml","time":"2017-06-26","detail":"　　原标题：哥伦比亚总统：游船沉没事故致6人死亡31人失踪\n　　中新网6月26日电 据外媒报道，一艘载有百余人的游船25日在哥伦比亚西北部的一个水库沉没，目前救援行动正在进行中。根据哥伦比亚总统桑托斯","title":"哥伦比亚总统：游船沉没事故致6人死亡31人失踪"}],"type":"selection"}]},"status":"ok"};
+//selection person_baike
+//var json_result={"data":{"nli":[{"desc_obj":{"type":"person_baike","status":0},"data_obj":[{"start_time":"2013年3月","post":"国家主席","nation":"中国","end_time":"2018年","person_name":"习近平","post_of_times":"第12届"},{"start_time":"2008年3月","post":"国家主席","nation":"中国","end_time":"2013年3月","person_name":"胡锦涛","post_of_times":"第11届"},{"start_time":"2003年3月","post":"国家主席","nation":"中国","end_time":"2008年3月","person_name":"胡锦涛","post_of_times":"第10届"},{"start_time":"1998年3月","post":"国家主席","nation":"中国","end_time":"2003年3月","person_name":"江泽民","post_of_times":"第9届"},{"start_time":"1993年3月","post":"国家主席","nation":"中国","end_time":"1998年3月","person_name":"江泽民","post_of_times":"第8届"},{"start_time":"1988年4月","post":"国家主席","nation":"中国","end_time":"1993年3月","person_name":"杨尚昆","post_of_times":"第7届"},{"start_time":"1983年6月","post":"国家主席","nation":"中国","end_time":"1988年4月","person_name":"李先念","post_of_times":"第6届"},{"start_time":"1965年1月","post":"国家主席","nation":"中国","end_time":"1966年","person_name":"刘少奇","post_of_times":"第3届"},{"start_time":"1959年4月","post":"国家主席","nation":"中国","end_time":"1965年1月","person_name":"刘少奇","post_of_times":"第2届"},{"start_time":"1949年9月","post":"国家主席","nation":"中国","end_time":"1959年4月","person_name":"毛泽东","post_of_times":"第1届"}],"type":"selection"}]},"status":"ok"};
+//selection poem
+//var json_result={"data":{"nli":[{"desc_obj":{"result":"有下面这些诗文,请从中选出一个,我来读","type":"poem","status":0},"data_obj":[{"poem_name":"静夜思","author":"李白"},{"poem_name":"送孟浩然之广陵","author":"李白"},{"poem_name":"月下独酌其一","author":"李白"},{"poem_name":"望庐山瀑布","author":"李白"},{"poem_name":"赠汪伦","author":"李白"},{"poem_name":"将进酒","author":"李白"},{"poem_name":"望天门山","author":"李白"},{"poem_name":"独坐敬亭山","author":"李白"},{"poem_name":"闻王昌龄左迁龙标，遥有此寄","author":"李白"}],"type":"selection"}]},"status":"ok"};
+//math24
+//var json_result={"data":{"nli":[{"desc_obj":{"result":"你是要算24点吗？请随便说4个10以内的数字：","status":0},"type":"math24"}]},"status":"ok"};
+//math
+//var json_result={"data":{"nli":[{"desc_obj":{"result":"结果等于3。","status":0},"data_obj":[{"result":"3","content":"结果等于3。"}],"type":"math"}]},"status":"ok"};
+//unitconvert
+//var json_result={"data":{"nli":[{"desc_obj":{"result":"等于5.0E-4吨。","status":0},"data_obj":[{"src_unit":"斤","src_value":"1.0","dst_value":"5.0E-4","dst_unit":"吨","content":"等于5.0E-4吨。"}],"type":"unitconvert"}]},"status":"ok"};
+//nonsense
+//var json_result={"data":{"nli":[{"desc_obj":{"result":"叫我干嘛？","status":0},"type":"nonsense"}]},"status":"ok"};
+//exchangerate
+//var json_result={"data":{"nli":[{"desc_obj":{"result":"您要查找的信息请看屏幕显示：1人民币兑换0.14750美元","source_currency":"1人民币","status":0},"data_obj":[{"target_currency":"0.14750美元"}],"type":"exchangerate"}]},"status":"ok"};
+//date
+//var json_result={"data":{"nli":[{"desc_obj":{"result":"现在是下午3点33分。","status":0},"type":"date"}]},"status":"ok"};
+//zipcode
+//var json_result={"data":{"nli":[{"desc_obj":{"result":"上海市浦东金科路的邮编是200100。","status":0},"type":"zipcode"}]},"status":"ok"};
+//openweb search
+//var json_result={"data":{"nli":[{"desc_obj":{"result":"亲爱的主人，找到以下内容：","type":"search","status":0},"data_obj":[{"url":"http://www.baidu.com/s?ie=utf-8&wd=%E5%86%9C%E5%A4%AB%E4%B8%89%E6%8B%B3"}],"type":"openweb"}]},"status":"ok"};
+//tvprogram
+//var json_result={"data":{"nli":[{"desc_obj":{"result":"以下是CCTV-1综合的节目预告。","url":"","status":0},"data_obj":[{"highlight":0,"name":"动物世界-2017-79 (45分钟)","time":"00:20"},{"highlight":0,"name":"生活提示2017-135","time":"01:15"},{"highlight":0,"name":"晚间新闻","time":"01:21"},{"highlight":0,"name":"精彩一刻-2017-125完整版航拍中国黑龙江精编","time":"01:53"},{"highlight":0,"name":"精彩一刻-2017-152航拍中国上海景点","time":"02:41"},{"highlight":0,"name":"精彩一刻-2017-155航拍中国海南灯塔渔村","time":"02:47"},{"highlight":0,"name":"星光大道-2017-23","time":"02:56"},{"highlight":0,"name":"今日说法-2017-168","time":"04:29"},{"highlight":0,"name":"新闻联播","time":"04:57"},{"highlight":0,"name":"人与自然-2017-174","time":"05:27"},{"highlight":0,"name":"朝闻天下","time":"06:00"},{"highlight":0,"name":"生活早参考-特别节目(生活圈)2017-112","time":"08:35"},{"highlight":0,"name":"俺爹是卧底14/40","time":"09:28"},{"highlight":0,"name":"俺爹是卧底15/40","time":"10:16"},{"highlight":0,"name":"俺爹是卧底16/40","time":"11:05"},{"highlight":0,"name":"新闻30分","time":"12:00"},{"highlight":0,"name":"今日说法-2017-169","time":"12:36"},{"highlight":0,"name":"女儿红31/36","time":"13:15"},{"highlight":0,"name":"女儿红32/36","time":"14:05"},{"highlight":0,"name":"女儿红33/36","time":"14:56"},{"highlight":0,"name":"女儿红34/36","time":"15:50"},{"highlight":0,"name":"第四批“中国梦”主题新创作歌曲-相逢春天","time":"16:37"},{"highlight":0,"name":"第一动画乐园-2017-366","time":"16:49"},{"highlight":0,"name":"第一动画乐园-2017-367","time":"17:10"},{"highlight":1,"name":"第一动画乐园-2017-368","time":"18:06"},{"highlight":1,"name":"第一动画乐园(故事乐园)-2017-39","time":"18:38"},{"highlight":1,"name":"第一动画乐园-2017-35","time":"18:52"},{"highlight":1,"name":"新闻联播","time":"19:00"},{"highlight":1,"name":"天气预报","time":"19:31"},{"highlight":1,"name":"焦点访谈","time":"19:40"},{"highlight":1,"name":"星光大道-2017-24","time":"20:02"},{"highlight":1,"name":"晚间新闻","time":"21:59"},{"highlight":1,"name":"精彩一刻-2017-193中国文艺-向经典致敬-杨洪基","time":"22:40"},{"highlight":1,"name":"生活提示2017-136","time":"23:37"},{"highlight":1,"name":"星光大道-2017-24","time":"23:43"}],"type":"tvprogram"}]},"status":"ok"};
+//baike
+//var json_result={"data":{"nli":[{"desc_obj":{"result":"姚明身高是229厘米，以下是他的详细介绍：","status":0},"data_obj":[{"highlight":[0,0,0,0,0,0,0,0,0,0,1,0],"field_value":["姚明","篮球运动员 篮球俱乐部老板","AMY","上海","江苏苏州吴江震泽","男","140.6kg","汉族","叶莉","中国","229厘米","1980年9月12日"],"description":"姚明，1980年生于上海，祖籍苏州吴江。美国NBA及世界篮球巨星。中国篮球史上里程碑式人物。CBA上海队老板。曾效力于中国国家篮球队，NBA火箭队。2011年7月20日退役。获7次NBA“全明星”，被美国《时代周刊》列入“世界最具影响力100人”，被中国体育总局授予“体育运动荣誉奖章”“中国篮球杰出贡献奖”。\n","photo_url":"http://cn.olami.ai/ImageService/GetImage?id=0cae40e50fffa9ab3c5bb99f4f993cb7","type":"people","categorylist":["体育人物","电影","歌手","政治人物","音乐","诗词"],"field_name":["名称","职业","子女","出生地","籍贯","性别","体重","民族","配偶","国籍","身高","出生年月"]}],"type":"baike"}]},"status":"ok"};
+// weather
+//var json_result = {"data":{"nli":[{"desc_obj":{"result":"欢迎来到OLAMI。"},"data_obj":[{"date":0,"realtime_weather_desc":"晴","realtime_weather":0,"temp":"18","weather_end":0,"city":"上海","weather_start_desc":"多云","weather_start":2,"temperature_high":"25","description":"2017年05月09日,多云转晴,西风3-4级转西北风微风,最高温度25℃,最低温度18℃。","is_querying":1,"real_date":1494259200000,"pm25":68,"temperature_low":"18","weather_end_desc":"晴","wind":"西风3-4级转西北风微风"},{"date":1,"realtime_weather_desc":"","realtime_weather":0,"temp":"","weather_end":0,"city":"上海","weather_start_desc":"晴","weather_start":0,"temperature_high":"30","description":"2017年05月10日,晴,南风微风,最高温度30℃,最低温度21℃。","is_querying":0,"real_date":1494345600000,"pm25":0,"temperature_low":"21","weather_end_desc":"晴","wind":"南风微风"},{"date":2,"realtime_weather_desc":"","realtime_weather":0,"temp":"","weather_end":8,"city":"上海","weather_start_desc":"多云","weather_start":2,"temperature_high":"31","description":"2017年05月11日,多云转中雨,南风微风,最高温度31℃,最低温度20℃。","is_querying":0,"real_date":1494432000000,"pm25":0,"temperature_low":"20","weather_end_desc":"中雨","wind":"南风微风"},{"date":3,"realtime_weather_desc":"","realtime_weather":0,"temp":"","weather_end":3,"city":"上海","weather_start_desc":"小雨","weather_start":6,"temperature_high":"26","description":"2017年05月12日,小雨转阴,东南风微风转南风微风,最高温度26℃,最低温度20℃。","is_querying":0,"real_date":1494518400000,"pm25":0,"temperature_low":"20","weather_end_desc":"阴","wind":"东南风微风转南风微风"},{"date":4,"realtime_weather_desc":"","realtime_weather":0,"temp":"","weather_end":2,"city":"上海","weather_start_desc":"多云","weather_start":2,"temperature_high":"29","description":"2017年05月13日,多云,南风微风转东北风微风,最高温度29℃,最低温度20℃。","is_querying":0,"real_date":1494604800000,"pm25":0,"temperature_low":"20","weather_end_desc":"多云","wind":"南风微风转东北风微风"}],"type":"weather"}]},"status":"ok"};
+// joke
+//var json_result={"data":{"nli":[{"desc_obj":{"result":"好的，那你听好喽。","name":"","type":"joke","status":0},"data_obj":[{"content":"带5岁女儿认字，真假两字，真字她认识，假字她想了很久久，我提示她：“这世上有真就会有什么？”还手比划，她立马悟了，说：“我知道了，念线字，有针就有线，是吧，爸爸！”"}],"type":"joke"}]},"status":"ok"};
+// cooking
+//var json_result={"data":{"nli":[{"desc_obj":{"result":"主人，为你找到以下做法：","status":0},"data_obj":[{"name":"辣子鸡\n","content":"辣子鸡\n类别:热菜,家常菜\n主料:童子鸡 1只\n辅料:花生仁（油炸） 适量\n调料:色拉油 适量,食盐 适量,鸡精 少许,姜 适量,蒜 适量,花椒 适量,干辣椒 适量,料酒 适量,小葱 适量,白糖 少许\n做法步骤:\n第1步：将鸡洗净后切成2-3cm的小块，放在碗中，加入料酒、盐拌匀，腌制20分钟入味\n第2步：姜、蒜切片，葱切段备用\n第3步：干辣椒剪成小段备用\n第4步：锅中倒入油，烧热\n第5步：放入鸡块略炸，炸至金黄色后，盛出沥油\n第6步：再次下锅用大火炸一遍\n第7步：炸至表面金黄，肉质更脆，然后出锅沥油备用\n第8步：在锅中留底油，大火烧热，放入姜、蒜片爆香，接着放入剪好的辣椒段和花椒，小火煸炒出麻辣香味\n第9步：放入炸好的鸡块翻炒\n第10步：最后加入炸好的花生米，撒鸡精、糖和葱段炒匀\n烹饪技巧:\n1、盐在腌制鸡块的时候要一次加足，否则炸好后再加盐就不容易进味。\n2、炒辣椒和花椒时火力要小，才香。\n3、辣椒等其他调料还是要根据个人口味来添加。加点芝麻会更香哦。\n4、炸鸡块时火力要大，这样才能外焦里嫩，否则鸡肉炸干了口感就差了。\n1、做了辣子鸡，并且女儿也可以吃的，炸好的鸡块直接她就可以吃了，因为事先用盐腌过，尽管没有煮过，但吃起来还是一样很鲜的哦。\n2、做法不难，但是鸡块要事先油炸，最怕起油锅了，感觉好浪费油啊，并且油炸的吃多了不健康，不过还是可以偶尔为之的。"}],"type":"cooking"}]},"status":"ok"};
+// Stock
+//var json_result={"data":{"nli":[{"data_obj":[{"price_end":"4.360元","change_rate":"1.38%","price_high":"4.440元","favorite":"0","intent":"gegu","amount":"20845万元","price_low":"4.350元","change_amount":"0.060","id":"601600","time":"1497929254000","price_start":"4.360元","name":"中国铝业","volume":"4733万手","is_history":0,"cur_price":"4.420元"}],"desc_obj":{"result":"主人，为你找到中国铝业的最新股票行情。","status":0},"type":"stock"}]},"status":"ok"};
+// News
+//var json_result={"data":{"nli":[{"data_obj":[{"title":"得不到Surface 和它配套的指纹键盘或许能安慰到你","detail":"　　本文来自爱范儿\n　　指纹识别技术早已不是什么黑科技，但是将一个人们早已用顺手的功能放进一个在工业设计上基本没啥槽点的成熟产品内，大家当然是表示欢迎了。\n　　微软早在推出 Surface Pro 4 的时候就为这款二合一设备准备了一款集成了指纹识别的 Type Cover 键盘，不过这款键盘售价高达 160 美元，比不带指纹识别的 Type Cover 贵了 30 美元。\n　　更重要的是，Surface Pro 4 的 Windows Hello 人脸识别识别和解锁的能力已经不比指纹识别差了，也因此一块带指纹识别的键盘对于 Surface 用户就不是那么重要了，况且，刷脸比刷手指来的更加酷炫。\n　　不过，并不是所有设备都是支持 Windows Hello 人脸识别的，那么这时候指纹识别就能派上用场了。微软在去年推出 Surface Studio 时，便一同推出了新的 Surface Keyboard 和鼠标，不过当时由于 Surface Studio 太过抢眼，新的键盘鼠标基本被忽视了，外媒 The Verge 到了今年三月份才反应过来还有 Surface Keyboard 这么个东西，反应过来后默默的给了个好评。\n　　而微软则在前两天悄悄的给 Surface Keyboard 做了个小升级。最明显的变化就是这个键盘集成了一个指纹识别，但这个变化又并不明显，因为微软将它放在了右侧的 Windows 按键中，基本看不出来。\n　　键盘的整体造型相较于上一代也基本没有变化。不过微软倒是给它起了个“既现代又直观”的名字——Microsoft Modern Keyboard with Fingerprint ID，明明白白告诉你人家也有指纹识别啦。\n　　新键盘上的这块指纹识别集成了Windows Hello功能，也就是说，用户可以通过刷指纹来进入 Windows 系统和网页，此外，这款新键盘还支持 macOS 以及最新版本的 Android 系统。相较于上一代只能通过蓝牙连接的单一方式，微软为新键盘加入了有线连接的选择。\n　　这款键盘的售价为 129.9 美元，约合人民币 885 元，而前代 Surface Keyboard则由之前的 129.9 美元降到了 99 美元，中国官网售价为 788 元。\n　　在人们称赞 Surface 系列的工业设计前，微软在外设和配件上的设计也是令人叹服的，Arc Touch 鼠标、Sculpt 人体工学键盘，都是设计感极强的产品，在这之前，微软还曾联手雷蛇推出过游戏鼠标，而一款叫做 IE 3.0 的鼠标，更是成就了微软在办公外设设计上的造诣。\n　　如果你有一台 Surface Studio，那么这款键盘你必须收入囊中；如果你没有 Surface Studio，你也可以为它先准备好一个搭对的键盘。\n","time":"2017-06-20","source":"新浪综合","image_url":"http://n.sinaimg.cn/tech/crawl/20170620/saha-fyhfxph4248898.jpg","ref_url":"http://tech.sina.com.cn/n/n/2017-06-20/doc-ifyhfnqa4477703.shtml"}],"desc_obj":{"result":"主人，以下为详细信息：","status":0},"type":"news"}]},"status":"ok"};
+// Poem
+//var json_result = {"data":{"nli":[{"data_obj":[{"content":"床前明月光，疑是地上霜。举头望明月，低头思故乡。","author":"李白","title":"静夜思"}],"desc_obj":{"result":"床前明月光，疑是地上霜。举头望明月，低头思故乡。","status":0},"type":"poem"}]},"status":"ok"};
+
+$(function(){
+  
+  $("body").append("111111111");
+  
+	var weather_pic_code = [{desc:"晴",code:"01"},
+							{desc:"雾",code:"10"},
+							{desc:"多云",code:"02"},
+							{desc:"阴",code:"03"},
+							{desc:"阵雨",code:"06"},
+							{desc:"雷阵雨",code:"06"},
+							{desc:"小雨",code:"04"},
+							{desc:"小到中雨",code:"05"},
+							{desc:"中雨",code:"05"},
+							{desc:"中到大雨",code:"06"},
+							{desc:"大雨",code:"06"},
+							{desc:"大到暴雨",code:"06"},
+							{desc:"暴雨",code:"06"},
+							{desc:"暴雨到大暴雨",code:"06"},
+							{desc:"大暴雨",code:"06"},
+							{desc:"大暴雨到特大暴雨",code:"06"},
+							{desc:"特大暴雨",code:"06"},
+							{desc:"雷阵雨伴有冰雹",code:"06"},
+							{desc:"雨夹雪",code:"08"},
+							{desc:"冻雨",code:"09"},
+							{desc:"阵雪",code:"09"},
+							{desc:"小雪",code:"09"},
+							{desc:"小到中雪",code:"09"},
+							{desc:"中雪",code:"09"},
+							{desc:"中到大雪",code:"09"},
+							{desc:"大雪",code:"09"},
+							{desc:"大到暴雪",code:"09"},
+							{desc:"暴雪",code:"09"},
+							{desc:"浮尘",code:"12"},
+							{desc:"扬沙",code:"12"},
+							{desc:"沙尘暴",code:"12"},
+							{desc:"强沙尘暴",code:"12"},
+							{desc:"霾",code:"12"}
+							];
+	function getWeatherPic(id) {
+		return weather_pic_code[id].code;
+	}
+	function getWeatherDesc(id) {
+		return weather_pic_code[id].desc;
+	}
+	//alert(weather_pic_code[32].desc);
+
+	// 根据json_result来显示页面
+	refresh_show = function setUi() {
+		if (json_result.status != "ok") {
+			// 显示默认数据
+			var default_div = $("#default").children().clone();
+			default_div.find(".sentence_content_div_div").html("json数据出错了<br/>~~~~(>_<)~~~~");
+
+			// 显示数据
+			$("#mainbody").append(default_div);
+			return ;
+		}
+
+		// 清空原有显示
+		$("#mainbody").empty();
+
+		try
+		{
+			//在此运行代码
+			var nli_data = json_result.data.nli[0];
+			var desc_obj = nli_data.desc_obj;
+			var type = nli_data.type;
+			var data_obj = nli_data.data_obj;
+
+			if (type == "weather") {
+				var weather_title = $("#weather .weather_title").clone();
+
+				// 遍历数据，找到要查询的某一天的数据
+				var query_data;
+				$.each( data_obj, function(index, content) {
+					if (content.is_querying == 1) {
+						query_data = content;
+						return false;// 退出循环
+					}
+				});
+
+				// 设置title
+				weather_title.find(".title_weather_img").attr("src", "./img/icon_weather" + getWeatherPic(Math.max(query_data.weather_start,query_data.weather_end)) + ".png");
+				weather_title.find(".city").html(query_data.city);
+				var real_date = new Date(query_data.real_date);
+				weather_title.find(".date").html(real_date.Format("MM/dd"));
+				weather_title.find(".week_of").html(real_date.WeekDesc());
+
+				//     设置气温
+				weather_title.find(".temperature").html(query_data.temperature_low + "～" + query_data.temperature_high + "℃");
+				//     设置PM2.5
+				if (query_data.pm25 > 0) {
+					weather_title.find(".pm25").html("PM" + query_data.pm25);
+				}
+				//     设置天气
+				if (query_data.weather_start == query_data.weather_end) {
+					weather_title.find(".weather_desc_change").html(getWeatherDesc(query_data.weather_start));
+				} else {
+					weather_title.find(".weather_desc_change").html(getWeatherDesc(query_data.weather_start) + "转" + getWeatherDesc(query_data.weather_end));
+				}
+				//     设置风速
+				weather_title.find(".wind").html(query_data.wind);
+
+				// 显示数据
+				$("#mainbody").append(weather_title);
+
+				// 显示每天数据
+				$.each( data_obj, function(index, content) {
+					var weather_content = $("#weather .content_div").clone();
+					var real_date = new Date(content.real_date);
+					weather_content.find(".weather_date").html(real_date.Format("MM/dd"));
+					weather_content.find(".weather_week").html(real_date.WeekDesc());
+					//     设置天气
+					if (content.weather_start == content.weather_end) {
+						weather_content.find(".weather_start").html(getWeatherDesc(content.weather_start));
+						weather_content.find(".weather_change").hide();
+						weather_content.find(".weather_end").hide();
+					} else {
+						weather_content.find(".weather_start").html(getWeatherDesc(content.weather_start));
+						weather_content.find(".weather_end").html(getWeatherDesc(content.weather_end));
+					}
+					//     设置气温
+					weather_content.find(".temperature").html(content.temperature_low + "/" + content.temperature_high + "℃");
+					//     设置PM2.5
+					if (content.pm25 > 0) {
+						weather_content.find(".pm25").html("PM" + content.pm25);
+					}
+					//     设置图片
+					weather_content.find(".width_weather_img").attr("src", "./img/icon_weather" + getWeatherPic(Math.max(content.weather_start,content.weather_end)) + "_d.png");
+
+					// 显示数据
+					$("#mainbody").append(weather_content);
+				});
+
+			} else if(type == "poem"){
+				$.each( data_obj, function(index, content) {
+					//获取标题
+					var poem_title = $("#poem .poem_title").clone();
+					//设置标题
+					poem_title.find(".poem_title_content").html(content.title);
+					//设置作者
+					poem_title.find(".poem_title_author").html(content.author);
+					//加入标题
+					$("#mainbody").append(poem_title);
+
+					//获取栏
+					var real_line = $(".real_line").clone();
+					//加入栏
+					$("#mainbody").append(real_line);
+
+					//获取内容
+					var content_div = $("#poem .content_div").clone();
+
+					//设置内容
+					var contentResult = content.content.split(/([,，.。?？!！])/);
+					for(var i=0;i<contentResult.length-1;i++){
+						var poem_content_div = $("#poem").find(".poem_content_div").clone();
+
+						var append_str = "";
+						// 诗歌正文是否存在
+						if (contentResult[i] != undefined) {
+							append_str = contentResult[i];
+							i++;
+							// 诗歌正文后的标题是否存在
+							if (contentResult[i] != undefined) {
+								append_str += contentResult[i];
+							}
+						}
+						poem_content_div.find(".poem_content").eq(0).html(append_str);
+
+						i++;
+						// 诗歌正文是否存在
+						if (contentResult[i] != undefined) {
+							append_str = contentResult[i];
+							i++;
+							// 诗歌正文后的标题是否存在
+							if (contentResult[i] != undefined) {
+								append_str += contentResult[i];
+							}
+						}
+						poem_content_div.find(".poem_content").eq(1).html(append_str);
+
+						content_div.append(poem_content_div);
+					}
+
+					//加入内容
+					$("#mainbody").append(content_div);
+
+				});
+
+			} else if(type == "news"){
+				$.each( data_obj, function(index, content) {
+					//获取标题
+					var preFormat_news = $("#news #preFormat_news").clone();
+					//放入标题
+					preFormat_news.find(".news_title").html(content.title);
+					//放入信息来源
+					preFormat_news.find(".source").html("来源:"+content.source);
+					//放入时间
+					preFormat_news.find(".time").html("时间:"+content.time);
+					//显示标题
+					$("#mainbody").append(preFormat_news);
+					//获取栏
+					var real_line1 = $(".real_line").clone();
+					//加入栏
+					$("#mainbody").append(real_line1);
+					//如果图片地址不为空
+					if(content.image_url != null && content.image_url != "" ){
+						//获取图片
+						var news_pic_url = $("#news .news_pic_url").clone();
+						//更改图片地址
+						news_pic_url.attr("src",content.image_url);
+						//显示图片
+						$("#mainbody").append(news_pic_url);
+					}
+					//获取内容
+					var preFormat_news_content = $("#news #preFormat_news_content").clone();
+					//放入内容
+					preFormat_news_content.html(content.detail);
+					//显示内容
+					$("#mainbody").append(preFormat_news_content);
+					//获取栏
+					var real_line2 = $(".real_line").clone();
+					//加入栏
+					$("#mainbody").append(real_line2);
+				});
+
+				} else if(type == "stock"){
+				$.each( data_obj, function(index, content) {
+					//获取标题
+					var preFormat_stock = $("#stock #preFormat_stock").clone();
+					//找到标题 放入 name id
+					preFormat_stock.find(".stock_title_content").html(content.name+" "+content.id);
+					//如果股价上涨
+					if(content.change_amount > 0 ){
+						preFormat_stock.find(".change_amount").html("+"+content.change_amount);
+					}else{
+						//下跌换图
+						preFormat_stock.find(".change_amount").html(content.change_amount);
+						preFormat_stock.find(".stock_up").attr("src","./img/stock_down.png");
+					}
+					//上涨幅度
+					preFormat_stock.find(".change_rate").html(content.change_rate);
+					//今开
+					preFormat_stock.find(".price_start").html(content.price_start);
+					//昨收价
+					preFormat_stock.find(".price_end").html(content.price_end);
+					//最高
+					preFormat_stock.find(".price_high").html(content.price_high);
+					//最低
+					preFormat_stock.find(".price_low").html(content.price_low);
+					//成交量
+					preFormat_stock.find(".volume").html(content.volume);
+					//成交额
+					preFormat_stock.find(".amount").html(content.amount);
+					//显示内容
+					$("#mainbody").append(preFormat_stock);
+
+				});
+
+				} else if(type == "cooking"){
+				$.each( data_obj, function(index, content) {
+					//获取标题
+					var cooking = $("#cooking").clone();
+					//找到标题 放入 name id
+
+					var content_str = content.content.replace(/\n/g, "<br/>");
+
+					cooking.find(".sentence_content_div_div").html(content_str);
+
+					//显示内容
+					$("#mainbody").append(cooking);
+
+				});
+
+				} else if(type == "joke"){
+				$.each( data_obj, function(index, content) {
+					//获取标题
+					var joke = $("#joke").clone();
+					//找到标题 放入 name id
+
+					joke.find(".sentence_content_div_div").html(content.content);
+
+					//显示内容
+					$("#mainbody").append(joke);
+
+				});
+
+				} else if(type == "tvprogram"){
+					//获得tvprogram的子目录
+					var tvprogram = $("#tvprogram").children().clone();
+					$.each( data_obj, function(index, content) {
+						//定义tr
+						var tr;
+						//如果是高亮
+						if (content.highlight == 1) {
+							//获得高亮tr
+							tr = $("#tvprogram").find(".highlight").clone();
+						} else {
+							//获得普通tr
+							tr = $("#tvprogram").find(".content_content").clone();
+						}
+						//第一个td为名字
+						tr.find("td").eq(0).html(content.name);
+						//第二个td为时间
+						tr.find("td").eq(1).html(content.time);
+						//显示tr
+						tr.show();
+						//tr追加入tvprogram
+						tvprogram.find("table").append(tr);
+
+					});
+						//显示内容
+						$("#mainbody").append(tvprogram);
+
+				} else if(type == "baike"){
+					//获得tvprogram的子目录
+					var baike = $("#baike").children().clone();
+					$.each( data_obj, function(index, content) {
+						baike.find(".description_content").html(content.description);
+						baike.eq(0).attr("src",content.photo_url)
+						$.each( content.highlight, function(index1, content1) {
+							//定义tr
+							var tr;
+							//如果是高亮
+							if (content1 == 1) {
+								//获得高亮tr
+								tr = $("#baike").find(".highlight").clone();
+							} else {
+								//获得普通tr
+								tr = $("#baike").find(".content_content").clone();
+							}
+							//第一个td为名字
+							tr.find("td").eq(0).html(content.field_name[index1]);
+							//第二个td为时间
+							tr.find("td").eq(1).html(content.field_value[index1]);
+							//显示tr
+							tr.show();
+							//tr追加入baike
+							baike.find("table").append(tr);
+						});
+						$("#mainbody").append(baike);
+					});
+
+
+				} else if(type == "openweb"){
+					//获得tvprogram的子目录
+					var openweb = $("#openweb").children().clone();
+					$.each( data_obj, function(index, content) {
+						openweb.attr('src',content.url);
+					});
+					//显示内容
+					openweb.css("height",$(window).height()-40);
+					$("#mainbody").append(openweb);
+
+				} else if(type == "selection"){
+					//获得tvprogram的子目录
+					if(desc_obj.type == "poem"){
+						var poem_title = $("#selection .poem_title").clone();
+						$("#mainbody").append(poem_title);
+						$.each( data_obj, function(index, content) {
+							var content_div = $("#selection .poem .content_div").clone();
+							var empty_line = $("#empty_line").clone();
+							content_div.append(empty_line);
+							content_div.find(".poem_index_div_content").html(index+1);
+							content_div.find(".option_mid_title").html(content.poem_name);
+							content_div.find(".option_poem_author").html(content.author);
+							var real_line = $("#real_line").clone();
+							content_div.append(real_line);
+							$("#mainbody").append(content_div);
+						});
+
+					}else if (desc_obj.type == "news"){
+						var option_news_title = $("#selection .news .option_news_title").clone();
+						$("#mainbody").append(option_news_title);
+						$.each( data_obj, function(index, content) {
+							var content_div = $("#selection .news .content_div").clone();
+							content_div.find(".news_index").html(index+1);
+							if(content.image_url == ""){
+								var content_nopic = $("#selection .news .content_nopic").clone();
+							}else{
+								var content_nopic = $("#selection .news .content_pic").clone();
+								content_nopic.find(".news_icon").attr("src",content.image_url);
+							}
+							content_nopic.find(".news_title").html("<a href="+content.ref_url+">"+ content.title +"</a>");
+							content_nopic.find(".news_detail").html(content.detail.substring(0,50));
+							content_div.find(".td_index").append(content_nopic);
+							var empty_line = $("#empty_line").clone();
+							content_div.append(empty_line);
+							var real_line = $("#real_line").clone();
+							content_div.append(real_line);
+							$("#mainbody").append(content_div);
+						});
+
+					}else if (desc_obj.type == "cooking"){
+						$.each( data_obj, function(index, content) {
+							var cook_content_div = $("#selection .cook_content_div").clone();
+							cook_content_div.find(".index_div_content").html(index+1);
+							cook_content_div.find(".option_mid_title").html(content.name);
+							var real_line = $("#real_line").clone();
+							cook_content_div.append(real_line);
+							var real_line = $("#real_line").clone();
+							cook_content_div.append(real_line);
+							$("#mainbody").append(cook_content_div);
+						});
+
+					}else if (desc_obj.type == "person_baike"){
+						var title = $("#selection .person_baike .title").clone();
+						$("#mainbody").append(title);
+						$.each( data_obj, function(index, content) {
+							var content_div = $("#selection .person_baike .content_div").clone();
+							content_div.find(".index_div_content").html(index+1);
+							content_div.find(".person_name").html(content.person_name);
+							content_div.find(".nation").html(content.nation);
+							content_div.find(".post_of_times").html(content.post_of_times);
+							content_div.find(".post").html(content.post);
+							content_div.find(".start_time").html(content.start_time+"--"+content.end_time);
+							$("#mainbody").append(content_div);
+						});
+
+
+					}
+
+			}else {
+				// 显示默认数据
+				var default_div = $("#default").children().clone();
+				default_div.find(".sentence_content_div_div").html(desc_obj.result);
+
+				// 显示数据
+				$("#mainbody").append(default_div);
+			}
+		}
+		catch(err)
+		{
+			//在此处理错误
+			$("#mainbody").html("不支持的数据");
+		}
+
+	}
+
+});
+
+function refresh_show_trigger(resp_json_array) {
+	console.log("js *************** start");
+	console.log(resp_json_array);
+	if (resp_json_array != undefined) {
+		json_result = resp_json_array;
+		//json_result = $.parseJSON(resp_json_array);
+	}
+	if (refresh_show == undefined) {
+		setTimeout(refresh_show_trigger, 100);
+	} else {
+		refresh_show();
+	}
+	console.log("js *************** end");
+}
+
+refresh_show_trigger();
+
+
+
+</script>
+</head>
+<body>
+
+<div id="mainbody" class="width_min_19em"></div>
+
+<div style="display:none;">
+	<div id="weather">
+		<div class="weather_title">
+			<div class="empty_fat_line"></div>
+					<table class="width_min_18em" border="0">
+						<tr>
+							<td rowspan="3" class="width_0_6em"></td>
+							<td rowspan="3" class="width_6em vcenter"><div><img class="width_6em title_weather_img" src="./img/icon_weather00.png"></div></td>
+							<td align="right">
+								<div class="weather_title_up city"></div>
+								<div class="weather_title_up date"></div>
+								<div class="weather_title_up week_of"></div>
+							</td>
+							<td rowspan="3" class="width_0_3em"></td>
+						</tr>
+						<tr>
+							<td class="height_2_2em" valign="bottom" align="right" style="height: 0rem">
+								<div class="weather_title_up temperature"></div>
+								<div class="weather_title_up pm25"></div>
+							</td>
+						</tr>
+						<tr>
+							<td class="height_1em" align="right">
+								<div class="weather_title_down weather_desc_change"></div>
+								<div class="weather_title_down wind"></div>
+							</td>
+						</tr>
+					</table>
+					<div class="empty_line"></div>
+		</div>
+		<div class="content_div">
+			<div class="empty_fat_line"></div><div class="empty_thin_line"></div>
+			<table class="weather_table">
+				<tr>
+					<td class="weather_info1">
+						<div class="padd_l_0_5em">
+						<span class="weather_date"></span>
+						<div class="weather_week"></div>
+						</div>
+					</td>
+					<td class="weather_info2">
+						<div class="weather_weather">
+							<div class="inline_block weather_start"></div><div class="inline_block weather_change">转</div><div class="inline_block weather_end"></div>
+						</div>
+					</td>
+					<td class="weather_info3">
+						<div class="weather_temp temperature"></div>
+						<div class="weather_temp pm25"></div>
+					</td>
+					<td class="weather_info4">
+						<img class="width_weather_img" src="./img/icon_weather00_d.png">
+					</td>
+				</tr>
+			</table>
+			<div class="empty_fat_line"></div>
+			<div class="real_line"></div>
+		</div>
+	</div>
+	
+	<div id="poem">
+		<div class="poem_title">
+			<table class="poem_title_table" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td align="left" class="top width_4em"><img class="" src="./img/poem_title.png" style="height: 1.7rem;"></td>
+					<td class="width_min_5em top" align="left"><div class="poem_title_content" style="font-size: 1.5rem;"></div></td>
+					<td class="width_min_3em vcenter" align="right"><div class="poem_title_author"></div></td>
+				</tr>
+			</table>
+		</div>
+		<div class="content_div">
+		</div>
+		<div class="poem_content_div center vcenter width_min_19em">
+			<div class="inline poem_content"></div>
+			<div class="inline poem_content"></div>
+		</div>
+	</div>
+	
+	<div id="news">
+		<div id="preFormat_news">
+			<div id="preFormat_news_title">
+				<center><div class="news_title bold"><span>标题</span></div></center>
+				<div class="news_title_small left source">来源:</div>
+				<div class="news_title_small right time">时间:</div>
+			</div><br/>
+		</div>
+		<div id="preFormat_news_content" class="news_content">
+			新闻内容
+		</div>
+		<img class="news_pic_url" alt="" src=""><br/>
+	</div>
+	
+	<div id="stock">
+		<div id="preFormat_stock">
+			<div class="stock_title text_center" >
+				<div class="stock_title_content">
+					name&nbsp;id
+				</div>
+			</div>
+			<div class="content_div">
+			<div id="preFormat_stock_content" class="width_min_18em">
+				<table cellspacing="0" class="collapse padd_l_0_2em" cellpadding="1" border="0">
+					<tr>
+						<td colspan="3">
+							<div class="bold inline cur_price"></div>
+								<div class="red font_0_85em inline">
+									<span class="change_amount">+</span>
+									<img class="height_1_3em stock_up" alt="" src="./img/stock_up.png">
+									<span class="change_rate"></span>
+								</div>
+						</td>
+						<td colspan="1" class="" valign="middle" align="left"><div class="mr_l0_2em mr_t0_2em font_0_65em vcenter"><s:date name='@com.webvoice.util.WebVoiceUtil@getDate(#PreFormatted_data.time)' format="yyyy-MM-dd HH:mm"/></div></td>
+						</tr>
+					<tr>
+						<td nowrap="nowrap" class="width_min_4em"><div class="stock_left_div">今开</div></td>
+						<td nowrap="nowrap" class="width_min_4em"><div class="stock_right_div price_start"></div></td>
+						<td nowrap="nowrap" class="width_min_4em"><div class="stock_left_div">昨收价</div></td>
+						<td nowrap="nowrap" class="width_min_4em"><div class="stock_right_div price_end"></div></td>
+					</tr>
+					<tr>
+						<td nowrap="nowrap"><div class="stock_left_div">最高</div></td>
+						<td nowrap="nowrap"><div class="stock_right_div price_high"></div></td>
+						<td nowrap="nowrap"><div class="stock_left_div">最低</div></td>
+						<td nowrap="nowrap"><div class="stock_right_div price_low"></div></td>
+					</tr>
+					<tr>
+						<td nowrap="nowrap"><div class="stock_left_div">成交量</div></td>
+						<td nowrap="nowrap"><div class="stock_right_div volume"></div></td>
+						<td nowrap="nowrap"><div class="stock_left_div">成交额</div></td>
+						<td nowrap="nowrap"><div class="stock_right_div amount"></div></td>
+					</tr>
+				</table>
+			</div>
+			</div><br>
+		</div>
+	</div>
+	
+	<div id="cooking">
+		<div class="padd_bm_0_5em">
+			<div class="ds_table"><div class="sentence_content_top_3j_left"></div><div class="sentence_content_top_3j_right"></div></div>
+			<div class="sentence_content_div ">
+				<div class="sentence_content_div_div">					
+				</div>
+			</div>
+		</div>
+	</div>	
+	
+	<div id="joke">
+		<div class="padd_bm_0_5em">
+			<div class="ds_table"><div class="sentence_content_top_3j_left"></div><div class="sentence_content_top_3j_right"></div></div>
+			<div class="sentence_content_div ">
+				<div class="sentence_content_div_div">					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="tvprogram">
+		<div class="padd_bm_0_5em">
+			<div class="ds_table"><div class="sentence_content_top_3j_left"></div><div class="sentence_content_top_3j_right"></div></div>
+			<div class="sentence_content_div ">
+				<div class="sentence_content_div_div">	
+					<table cellpadding="0" cellspacing="0" class="dotted">
+						<tr class="" >
+							<td class="top"><strong>节目名称</strong></td>
+							<td class="top"><strong>节目时间</strong></td>
+						</tr>
+						<tr class="content_content" style="display: none;">
+							<td class="top tvprogram_name"></td>
+							<td class="top tvprogram_time"></td>
+						</tr>
+						<tr class="highlight " style="display: none;">
+							<td class="top tvprogram_name"></td>
+							<td class="top tvprogram_time"></td>
+						</tr>
+					</table>				
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="baike">
+		<img class="photo_url" alt="" src=""><br/>
+		<div class="padd_bm_0_5em baike_content">
+			<div class="ds_table"><div class="sentence_content_top_3j_left"></div><div class="sentence_content_top_3j_right"></div></div>
+			<div class="sentence_content_div ">
+				<div class="sentence_content_div_div">	
+					<table cellpadding="0" cellspacing="0" class="dotted">
+						<!--<tr class="" >
+							<td class="top"><strong>节目名称</strong></td>
+							<td class="top"><strong>节目时间</strong></td>
+						</tr>-->
+						<tr class="content_content" style="display: none;">
+							<td class="top tvprogram_name"></td>
+							<td class="top tvprogram_time"></td>
+						</tr>
+						<tr class="highlight " style="display: none;">
+							<td class="top tvprogram_name"></td>
+							<td class="top tvprogram_time"></td>
+						</tr>
+					</table>
+					<br />
+					<div class="padd_lr_0_3em description">
+						<span class="bold">简介:</span><br/>
+						<span class="description_content"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	<div id="openweb">
+		<iframe src="" frameborder="0" scrolling="" style="border: 0px;"></iframe>
+	</div>
+
+	<div id="selection">
+		<div class="poem">
+			<div class="poem_title">
+				<div>
+					<img class="" src="./img/poem_title.png" style="height: 1.7rem;">
+					<div class="title_content" style="font-size: 1.5rem;">诗歌</div>
+				</div>
+			</div>
+			<div class="content_div">
+					<div class="selection_line">
+						<div class="index_div">
+							<div class="poem_index_div_content"></div>
+						</div>
+						<div class="selection_content_mid inline_block">
+							<div class="option_mid_title"></div>
+						</div>
+						<div class="poem_selection_content_right">
+							<div class="option_poem_author"></div>
+						</div>
+					</div>
+			</div>
+		</div>
+		<div class="cooking">
+			<div class="cook_content_div">
+					<div class="selection_line">
+						<div class="index_div">
+							<div class="index_div_content">1</div>
+						</div>
+						<div class="selection_content_mid">
+							<div class="option_mid_title">cook_name</div>
+						</div>
+						<div class="selection_content_right" >
+							<img class="selection_content_icon" src="./img/cooking_icon.png">
+						</div>
+					</div>
+			</div>
+		</div>
+		<div class="news">
+			<div class="option_news_title">
+				<img src="./img/news_title.png">
+				<div class="title_content">新闻</div>
+			</div>
+			<div class="content_div">
+				<div class="empty_line"></div>
+				<div id="selection_news_content" >
+					<table class="width_min_19em height_min_2_4em" cellpadding="0" cellspacing="0">
+						<tr class="td_index">
+							<td class="width_3_2em top " align="center"><div class="padd_l_1_1em padd_t_1_1em"><div class="news_index">1</span></div></div></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="content_nopic">
+				<td class="vcenter" colspan="2">
+				<div id="option_news_content_title" class="news_desc bold top height_min_2_2em news_title">title</div>
+				<div class="news_desc text_bottom news_detail">detail</div>
+				</td>
+			</div>
+			<div class="content_pic">
+				<td class="width_4_2em vcenter">
+					<img class="news_icon" src="#"/>
+				</td>
+				<td>
+					<div id="option_news_content_title" class="news_desc bold top height_min_2_2em news_title">title</div>
+					<div class="news_desc text_bottom news_detail">detail</div>
+				</td>
+			</div>
+		</div>
+		<div class="person_baike">
+			<div class="title" >
+				<div>
+					<img class="" src="./img/option_baike_title.png">
+					<div class="title_content">百科</div>
+				</div>
+			</div>
+			<div class="content_div">
+					<table class="width_min_19em" cellpadding="0" cellspacing="0">
+						<tr >
+							<td align="center" class="width_2em top">
+								<div class="option_baike_index_div">
+									<div class="index_div_content">1</div>
+								</div>
+							</td>
+							<td align="left" class="option_baike_content top">
+								<div class="option_baike_content_name top person_name"></div>
+								<div class="nation"></div>
+								<div class="inline post_of_times"></div>
+								<div class="inline_block padd_lr_0_2em post"></div>
+								<div class="start_time"></div>
+							</td>
+						</tr>
+					</table>
+			</div>
+		</div>
+	</div>
+	<div class="real_line"></div>
+	
+	<div class="empty_line"></div>
+	
+	<div id="default">
+		<div class="padd_bm_0_5em">
+			<div class="ds_table"><div class="sentence_content_top_3j_left"></div><div class="sentence_content_top_3j_right"></div></div>
+			<div class="sentence_content_div ">
+				<div class="sentence_content_div_div">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+gjgjhgjgjgjgjgjhgjgj
+</body>
+</html>
